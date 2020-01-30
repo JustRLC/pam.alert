@@ -9,18 +9,18 @@ This utility requires mailgun's API to allow scripting in use of their SMTP. The
 # Installation
 Be aware! The following steps were tested with `Ubuntu 18.04`
 1. You will be required to sign up to [mailgun's website](https://www.mailgun.com/) to acquire the API.
-2. Create an directory `/etc/pam.alert` 
-```bash 
-sudo mkdir /etc/pam.alert; sudo chmod 0755 /etc/pam.alert; cd /etc/pam.alert
-```
-3. Install the bash script
+2. Install `pam.alert
 ```bash
-wget https://github.com/JustRLC/pam-alert/pam_alert.sh
+git clone https://github.com/JustRLC/pam.alert
+```
+3. Move directory to `/etc/pam.alert` 
+```bash 
+sudo mv pam.alert /etc/pam.alert; sudo chmod 0755 /etc/pam.alert; cd /etc/pam.alert
 ```
 4. For security purposes, allow only the root user to have full privileges over the file.
 ```bash
-sudo chmod 0700 /etc/pam.alert/ssh_alert.sh
-sudo chown root:root /etc/pam.alert/ssh_alert.sh
+sudo chmod 0700 pam_alert.sh
+sudo chown root:root pam_alert.sh
 ```
 5. Edit `pam_alert.sh` using a tool you desire (via nano or Vim) and add your Mailgun's `API` and `DOMAIN`, and `TO` (your email) e.g. gmail account. Then, save the file.
 ```bash
@@ -31,7 +31,7 @@ TO='' #The email you want to send the alerts
 6. Locate to `/etc/pam.d/` and edit `sshd` within the directory. Add the following line and save it:
 ```
 # SSH Alert script
-session optional pam_exec.so /etc/pam.scripts/ssh_alert.sh
+session optional pam_exec.so /etc/pam.alert/pam_alert.sh
 ```
 7. Ta-dah! Now, you can exit the server and login again. 
 ### Note  
