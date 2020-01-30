@@ -2,7 +2,7 @@
 
 if [ "$PAM_TYPE" != "close_session" ]; then
 
-    #You are required to input information
+    #Setting
     API='' #Your Mailgun API
     DOMAIN='' #Domain provided by Mailgun
     TO='' #The email you want to send the alerts
