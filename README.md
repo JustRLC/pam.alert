@@ -9,7 +9,7 @@ This utility requires mailgun's API to allow scripting in use of their SMTP. The
 # Installation
 Be aware! The following steps were tested with `Ubuntu 18.04`
 1. You will be required to sign up to [mailgun's website](https://www.mailgun.com/) to acquire the API.
-2. Install `pam.alert
+2. Install `pam.alert`
 ```bash
 git clone https://github.com/JustRLC/pam.alert
 ```
