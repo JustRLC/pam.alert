@@ -35,6 +35,6 @@ session optional pam_exec.so /etc/pam.scripts/ssh_alert.sh
 ```
 7. Ta-dah! Now, you can exit the server and login again. 
 ### Note  
-For testing purposes, the module is included as `optional`, so that you can still log in if the execution fails. After you made sure that it works, you can change optional to required. Then login won't be possible unless the execution of your hook script is successful (Not essential, but I would recommend doing so.).
+For testing purposes, the module is included as `optional`, so that you can still log in if the execution fails. After you made sure that it works, you can change `optional` to `required`. Then login won't be possible unless the execution of your hook script is successful (Not essential, but I would recommend doing so.).
 
 
